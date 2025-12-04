@@ -55,7 +55,7 @@
                     href="#"
                     class="bg-[#77B75F] font-[600] text-[14px] text-white hover:bg-white hover:text-[#77B75F] px-[24px] py-[12px] lg:px-[44px] lg:py-[22px] rounded-[50px] transition-all duration-400 ease uppercase"
                   >
-                    Подробнее
+                     {{ __('app.read_more') }}
                   </a>
                 </div>
               </div>
@@ -82,7 +82,7 @@
               <h2
                 class="lg:text-[60px] sm:text-[45px] text-[25px] leading-none font-[800] mb-[22px] text-[#474747]"
               >
-                Профиль компании
+                 {{ $company -> {'title_' . $locale} }}
               </h2>
               <span
                 class="bg-[#77B75F] w-[60px] h-[5px] lg:h-[8px] inline-block rounded-[10px] mb-[12px]"
@@ -90,34 +90,25 @@
               <p
                 class="lg:text-[20px] sm:text-[18px] text-[16px] mb-[20px] font-[600] text-[#939393] uppercase"
               >
-                О компании
+              {{ __('app.about') }}
               </p>
               <p
                 class="sm:text-[18px] text-[16px] mb-[31px] font-[500] text-[#474747]"
               >
-                Несмотря на то, что компания появилась на рынке средств защиты
-                растений нашей республики сравнительно недавно, она уже
-                становится известна широкому кругу покупателей благодаря
-                разнообразному ассортименту высокоэффективной продукции
-                <br /><br />
-                Специалисты нашей компании работают над тем, чтобы наша
-                продукция была высокоэффективной и доступной для покупателей по
-                цене. Благодаря этому предлагаемая нами продукция в короткие
-                сроки находит своего покупателя и укрепляет свои позиции на
-                рынке.
+                  {{ strip_tags($company -> {'text_' . $locale}) }} 
               </p>
               <a
                 href="#"
                 class="bg-[#77B75F] border-2 border-[#77B75F] font-[600] text-[12px] text-white hover:bg-white hover:text-[#77B75F] px-[24px] py-[12px] lg:px-[44px] lg:py-[22px] rounded-[50px] transition-all duration-400 ease uppercase"
               >
-                Подробнее
+                {{ __('app.read_more') }}
               </a>
             </div>
 
             <div class="w-full lg:w-[500px] mt-2 lg:mt-0 hidden sm:block">
               <div>
                 <img
-                  src="./img/position1.jpg"
+                  src="{{ asset('storage/' . $company->img1) }}"
                   class="w-full lg:w-[500px] h-[300px] rounded-[20px] mb-5 lg:mb-[30px] object-cover"
                   alt=""
                 />
@@ -125,7 +116,7 @@
 
               <div>
                 <img
-                  src="./img/position2.jpg"
+                  src="{{ asset('storage/' . $company->img2) }}"
                   class="w-full lg:w-[500px] h-[410px] rounded-[20px] object-cover"
                   alt=""
                 />

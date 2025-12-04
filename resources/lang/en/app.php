@@ -7,5 +7,6 @@ return [
     'media'     => 'Media',
     'blog'      => 'Blog',
     'contacts'  => 'Contacts',
-    'write'     => 'Write to Us'
+    'write'     => 'Write to Us',
+    'read_more' => 'Read More',
 ];

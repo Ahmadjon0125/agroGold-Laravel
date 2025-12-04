@@ -6,5 +6,6 @@ return [
     'media'     => 'Media',
     'blog'      => 'Blog',
     'contacts'  => 'Kontaktlar',
-    'write'     => 'Bizga yozing'
+    'write'     => 'Bizga yozing',
+    'read_more' => 'Batafsil',
 ];

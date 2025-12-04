@@ -16,7 +16,7 @@
     <!-- tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- css -->
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
     <title>Agro Gold</title>
 </head>
 
@@ -105,7 +105,7 @@
                     <ul class="py-[42px] text-white hidden lg:flex items-center gap-25 headerList">
                         <li><a href="{{ route('company.page') }}">{{ __('app.about') }}</a></li>
                         <li><a href="/catalog.html">{{ __('app.catalog') }}</a></li>
-                        <li><a href="/news.html">{{ __('app.news') }}</a></li>
+                        <li><a href="{{ route('news.page') }}">{{ __('app.news') }}</a></li>
                         <li><a href="/media.html">{{ __('app.media') }}</a></li>
                         <li><a href="/blog.html">{{ __('app.blog') }}</a></li>
                         <li><a href="/contact.html">{{ __('app.contacts') }}</a></li>
@@ -121,7 +121,7 @@
                     <ul class="navList flex lg:hidden">
                         <li><a href="{{ route('company.page') }}">{{ __('app.about') }}</a></li>
                         <li><a href="/catalog.html">{{ __('app.catalog') }}</a></li>
-                        <li><a href="/news.html">{{ __('app.news') }}</a></li>
+                        <li><a href="{{ route('news.page') }}">{{ __('app.news') }}</a></li>
                         <li><a href="/media.html">{{ __('app.media') }}</a></li>
                         <li><a href="/blog.html">{{ __('app.blog') }}</a></li>
                         <li><a href="/contact.html">{{ __('app.contacts') }}</a></li>
@@ -373,7 +373,7 @@
                     <div class="flex flex-col space-y-2 fooNav">
                         <a href="{{ route('company.page') }}" class="hover:opacity-80">{{ __('app.about') }}</a>
                         <a href="/catalog.html" class="hover:opacity-80">{{ __('app.catalog') }}</a>
-                        <a href="/news.html" class="hover:opacity-80">{{ __('app.news') }}</a>
+                        <a href="{{ route('news.page') }}" class="hover:opacity-80">{{ __('app.news') }}</a>
                         <a href="/media.html" class="hover:opacity-80">{{ __('app.media') }}</a>
                         <a href="/blog.html" class="hover:opacity-80">{{ __('app.blog') }}</a>
                         <a href="/contact.html" class="hover:opacity-80">{{ __('app.contacts') }}</a>
@@ -401,7 +401,7 @@
     <!-- swiperJs -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- main.js -->
-    <script src="./js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>
