@@ -12,9 +12,9 @@
           <div
             class="text-[16px] sm:text-[18px] lg:text-[22px] text-black flex items-center breadcrumb gap-3 pt-[50px] mb-[33px]"
           >
-            <a href="/" class="hover:text-[#77B75F] transition">Главная</a>
+            <a href="/" class="hover:text-[#77B75F] transition">{{ __('app.home') }}</a>
             <span class="bg-[#77B75F] w-[2px] h-[30px]"></span>
-            <a class="text-[#77B75F]">О компании</a>
+            <a class="text-[#77B75F]">{{ __('app.about') }}</a>
           </div>
 
           <!-- Title -->
@@ -60,5 +60,7 @@
           </div>
         </div>
       </section>
+
+      <x-info />
 
       @endsection

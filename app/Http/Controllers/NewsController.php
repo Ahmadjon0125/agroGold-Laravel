@@ -13,14 +13,21 @@ class NewsController extends Controller
         return view('front.news', compact('news'));
     }
 
-    public function newsIn($slug)
+    public function newsIn($id, $slug)
     {
+        $new = News::findOrFail($id);
+
         $locale = app()->getLocale();
 
-        $column = "slug_{$locale}";
+        $currentLocaleSlug = $new->{'slug_' . $locale};
 
-        $new = News::where($column, $slug)->firstOrFail();
 
+        if ($slug !== $currentLocaleSlug) {
+            return redirect()->route('newsIn.page', [
+                'id' => $new->id,
+                'slug' => $currentLocaleSlug
+            ]);
+        }
 
         return view('front.newsIn', compact('new'));
     }

@@ -12,9 +12,9 @@
           <div
             class="text-[16px] sm:text-[18px] lg:text-[22px] text-black flex items-center breadcrumb gap-3 pt-[50px] mb-[33px]"
           >
-            <a href="/" class="hover:text-[#77B75F] transition">Главная</a>
+            <a href="/" class="hover:text-[#77B75F] transition">{{ __('app.home') }}</a>
             <span class="bg-[#77B75F] w-[2px] h-[30px]"></span>
-            <a href="/news.html" class="hover:text-[#77B75F]">Новости</a>
+            <a href="/news.html" class="hover:text-[#77B75F]">{{ __('app.news') }}</a>
             <span class="bg-[#77B75F] w-[2px] h-[30px]"></span>
             <a class="text-[#77B75F]"> {{ $new->{'title_' . $locale} }}</a>
           </div>
@@ -54,15 +54,8 @@
             </div>
           </div>
 
-          <div class="mb-[100px] mt-[50px] text-center">
-            <a
-              id="load-more"
-              class="px-8 py-3 border-2 border-[#D24A43] rounded-full text-sm font-semibold text-[#D24A43] hover:bg-[#D24A43] hover:text-white transition-colors duration-300 uppercase"
-            >
-              Показать еще
-            </a>
-          </div>
         </div>
       </section>
 
+      <x-info />
   @endsection

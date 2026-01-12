@@ -11,7 +11,7 @@
             <!-- Breadcrumb -->
             <div
                 class="text-[16px] sm:text-[18px] lg:text-[22px] text-black flex items-center breadcrumb gap-3 pt-[50px] mb-[33px]">
-                <a href="/" class="hover:text-[#77B75F] transition">Главная</a>
+                <a href="/" class="hover:text-[#77B75F] transition">{{ __('app.home') }}</a>
                 <span class="bg-[#77B75F] w-[2px] h-[30px]"></span>
                 <a class="text-[#77B75F]">{{ __('app.news') }}</a>
             </div>
@@ -27,7 +27,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach ($news as $new)
-                    <a href="{{ route('newsIn.page', $new->{ 'slug_' . $locale } ) }}"
+                    <a href="{{ route('newsIn.page', [
+                        'id' => $new->id,
+                        'slug' => $new->{'slug_' . $locale},
+                    ]) }}"
                         class="news-item bg-[#F8F8F8] rounded-[20px] overflow-hidden group hover:shadow-md hover:scale-[1.03] hover:-translate-y-1 transition-all duration-400 ease cursor-pointer">
                         <div class="relative h-[200px] md:h-[220px]">
                             <img src="{{ asset('storage/' . $new->img) }}" alt="Yangilik 1"
@@ -61,4 +64,6 @@
 
         </div>
     </section>
+
+    <x-info />
 @endsection
